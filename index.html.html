@@ -1,0 +1,163 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zezo ❤️ Alia - 5 Month Anniversary</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffb3d9;
+            color: #4a033d;
+            overflow-x: hidden;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            backdrop-filter: blur(3px);
+        }
+        #passwordScreen input {
+            padding: 12px;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        #passwordScreen button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #passwordScreen button:hover {
+            background-color: #ff3f9d;
+        }
+        #mainContent {
+            display: none;
+            padding: 20px;
+            background-color: rgba(255, 240, 250, 0.85);
+            min-height: 100vh;
+        }
+        h1, h2 {
+            color: #b30086;
+        }
+        .reasons-box {
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(255, 0, 144, 0.3);
+        }
+        .moon-img {
+            width: 120px;
+            margin: 10px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+        .moon-row { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+        .song-link {
+            display:block;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            width: 220px;
+            text-align: center;
+        }
+        .song-link:hover { background-color: #ff3f9d; }
+    </style>
+</head>
+<body>
+
+<!-- Password Screen -->
+<div id="passwordScreen" class="center">
+    <h1>❤️ Welcome Alia ❤️</h1>
+    <p>Enter the secret date to continue</p>
+    <input type="text" id="passInput" placeholder="DD/MM/YYYY">
+    <button onclick="checkPass()">Enter</button>
+</div>
+
+<!-- Main Content -->
+<div id="mainContent">
+    <h1>Happy 5 Month Anniversary, Alia ❤️</h1>
+
+    <!-- Song Link -->
+    <a class="song-link" id="songLink" href="#" target="_blank">🎵 Listen to Our Song 🎵</a>
+
+    <div class="moon-row">
+        <img class="moon-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=300&q=80" alt="moon1">
+    </div>
+
+    <h2>💌 A Love Letter From Zezo</h2>
+    <p class="reasons-box">
+        My love Alia, sometimes I sit and wonder how someone as soft, as gentle, and as beautifully real as you somehow found her way into my life. You didn’t just enter my world—you became the warmest part of it. You became the voice that calms me, the smile that lifts me, and the presence that makes everything else feel a little easier, a little brighter, a little more worth it. 
+        <br><br>
+        Every day with you feels like a small miracle. I love how you speak, how you think, how you love. I love the way you let me into your heart even when you’re tired, even when you’re hurting. I love the softness in your eyes, the strength in your soul, and the tenderness in the way you care. You make me feel like I’m home, like I’m safe, like I’m exactly where I’m meant to be. 
+        <br><br>
+        You are my moon, Alia—the quiet light that guides me, the safe glow I look for when the world feels dark. I love everything about you, from the smallest details to the deepest parts of your soul. I love you in ways I can’t explain, in ways I’ve never loved before, and in ways I will always love you for the rest of my life.
+    </p>
+
+    <h2>🌙 100 Reasons Why I Love You</h2>
+    <div class="reasons-box" id="reasonsList"></div>
+
+    <h2>🌕 More Moonlight For You</h2>
+    <div class="moon-row">
+        <img class="moon-img" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=300&q=80" alt="moon2">
+        <img class="moon-img" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=300&q=80" alt="moon3">
+        <img class="moon-img" src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=300&q=80" alt="moon4">
+        <img class="moon-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=300&q=80" alt="moon5">
+    </div>
+</div>
+
+<script>
+    const reasons = [];
+    const reasonTemplates = [
+        'you make me smile in ways i never knew possible',
+        'your laugh is my favorite sound',
+        'you are kind to everyone around you',
+        'you hold my hand when i need it most',
+        'you understand me without many words',
+        'you make ordinary days feel special',
+        'your courage inspires me',
+        'you are my peace',
+        'your eyes hold whole galaxies',
+        'you are my best friend'
+    ];
+
+    for (let i = 1; i <= 100; i++) {
+        const base = reasonTemplates[(i-1) % reasonTemplates.length];
+        reasons.push(`${i}. I love you because ${base}.`);
+    }
+    document.getElementById('reasonsList').innerHTML = reasons.join('<br>');
+
+    function checkPass() {
+        const input = document.getElementById('passInput').value.trim();
+        if (input === "22/6/2025" || input === "22/06/2025") {
+            document.getElementById('passwordScreen').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+
+            // Set the correct YouTube link after password is entered
+            document.getElementById('songLink').href = "https://youtu.be/QHC-9PGT5ZQ";
+        } else {
+            alert("Wrong password habibti 😘");
+        }
+    }
+</script>
+
+</body>
+</html>
